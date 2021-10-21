@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import ReactDOM from "react-dom";
-import Ticker from "./Ticker";
+import Ticker from "./components/Ticker";
 
 const App = () => {
   const [data, setData] = useState([]);
