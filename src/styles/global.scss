@@ -1,0 +1,45 @@
+:root {
+  --ff-text: "Source Sans Pro", sans-serif;
+  --ff-number: "Rubik", sans-serif;
+
+  --clr-primary-100: hsl(240 45% 22%);
+
+  --fs-600: 2.4rem;
+  --fs-400: 1.6rem;
+}
+
+@media (min-width: 60em) {
+  :root {
+    --ff-600: 3.2rem;
+    --fs-400: 2.4rem;
+  }
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: inherit;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-kerning: auto;
+  font-kerning: auto;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-text);
+  font-size: var(--fs-400);
+  line-height: 1.5;
+}
