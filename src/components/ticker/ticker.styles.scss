@@ -1,0 +1,67 @@
+.ticker {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 4px 0;
+  box-sizing: content-box;
+  overflow: hidden;
+  &__element {
+  }
+}
+.header-coins {
+  display: flex;
+}
+.header-coin {
+  display: flex;
+
+  align-items: center;
+  min-width: 200px;
+  margin-right: 2.4rem;
+  margin-left: 2.4rem;
+  &__img {
+    flex: 1;
+    width: 50px;
+  }
+  &__content-body {
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    padding-left: 12px;
+  }
+  &__content-text {
+    display: flex;
+    flex-direction: row;
+  }
+  &__content-price {
+    font-weight: var(--fw-number-400);
+  }
+  &__content-name {
+    margin-left: 8px;
+  }
+  &__content-ranking {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 4px;
+    line-height: 1;
+    font-weight: var(--fw-text-700);
+    border-radius: 4px;
+    border: 1px solid var(--clr-green-200);
+    background-color: var(--clr-green-100);
+  }
+  &__content-percentage {
+    &:nth-of-type(2) {
+      margin-left: 8px;
+    }
+  }
+}
+.up {
+  color: var(--clr-green-100);
+}
+.down {
+  color: var(--clr-red-100);
+}
+.gray-text {
+  opacity: 0.5;
+}

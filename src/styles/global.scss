@@ -2,10 +2,20 @@
   --ff-text: "Source Sans Pro", sans-serif;
   --ff-number: "Rubik", sans-serif;
 
-  --clr-primary-100: hsl(240 45% 22%);
+  --clr-primary-100: hsl(227 20% 17%);
+  --clr-green-100: hsl(118 52% 44%);
+  --clr-green-200: hsl(118 52% 34%);
+  --clr-red-100: hsl(3 78% 53%);
+  --clr-red-200: hsl(3 78% 38%);
+  --clr-white: hsl(0 0% 100%);
 
   --fs-600: 2.4rem;
   --fs-400: 1.6rem;
+
+  --fw-text-400: 400;
+  --fw-text-700: 700;
+  --fw-number-400: 400;
+  --fw-number-400: 600;
 }
 
 @media (min-width: 60em) {
@@ -41,5 +51,14 @@ html {
 body {
   font-family: var(--ff-text);
   font-size: var(--fs-400);
+  font-weight: var(--fw-text-400);
   line-height: 1.5;
+  color: var(--clr-white);
+  background-color: var(--clr-primary-100);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
