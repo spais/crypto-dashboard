@@ -27,6 +27,7 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

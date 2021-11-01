@@ -1,49 +1,63 @@
 import { useEffect, useState } from "react";
+import axios from "../../utilities/axios";
+import "./ticker.styles.scss";
 
-const Ticker = (props) => {
-  const [data, setData] = useState([]);
+const Ticker = ({ fetchURL }) => {
+  const [data, setData] = useState(null);
+
+  const roundDecimal = (num) => {
+    let round = Number.parseFloat(num).toFixed(2);
+    return (num = round);
+  };
+
+  async function requestData() {
+    const res = await axios.get(fetchURL);
+    //console.log(res);
+    setData(res.data);
+    return res;
+  }
 
   useEffect(() => {
     requestData();
-  }, []);
-
-  async function requestData() {
-    const res = await fetch(
-      `https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_NOMICS_API_KEY}`
-    );
-    const json = await res.json();
-
-    setData(json);
-  }
+  }, [fetchURL]);
 
   return (
     <div className="ticker">
       <div className="ticker__element">
         <div className="header-coins">
-          {data
-            // Display top 10 tokens
-            .filter((token) => token.rank <= 10)
-            .map((token) => (
-              <div className="header-coin" key={token.id}>
-                <div className="header-coin__img">
-                  <img src={token.logo_url} alt={token.name} />
-                </div>
-                <div className="header-coin__content-text">
-                  <span className="header-coin__content-name">
-                    ${token.price} {token.currency}
-                  </span>
-                  <div className="ranking">
-                    <div className="ranking__current">{token.rank}</div>
+          {data &&
+            data
+              .filter((token) => token.rank <= 20) // Display top 20 tokens
+              .map((token, tokenIndex) => {
+                return (
+                  <div className="header-coin" key={tokenIndex}>
+                    <div className="header-coin__img">
+                      <img src={token.logo_url} alt={token.name} />
+                    </div>
+                    <div className="header-coin__content-body">
+                      <div className="header-coin__content-text">
+                        <span className="header-coin__content-price">
+                          ${roundDecimal(token.price)}
+                        </span>
+                        <span className="header-coin__content-name">
+                          {token.currency}
+                          <span className="header-coin__content-ranking">
+                            {token.rank}
+                          </span>
+                        </span>
+                      </div>
+                      <div className="header-coin__content-text">
+                        <span className="header-coin__content-percentage up">
+                          {roundDecimal(token["1d"].price_change)}%
+                        </span>
+                        <span className="header-coin__content-percentage gray-text">
+                          24HRs
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="header-coin-content-text">
-                  <span className="header-coin-content-percentage up"></span>
-                  <span className="header-coin-content-percentage gray-text">
-                    24HRs
-                  </span>
-                </div>
-              </div>
-            ))}
+                );
+              })}
         </div>
       </div>
     </div>
