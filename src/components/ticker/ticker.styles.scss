@@ -7,15 +7,12 @@
   padding: 4px 0;
   box-sizing: content-box;
   overflow: hidden;
-  &__element {
-  }
 }
 .header-coins {
   display: flex;
 }
 .header-coin {
   display: flex;
-
   align-items: center;
   min-width: 200px;
   margin-right: 2.4rem;

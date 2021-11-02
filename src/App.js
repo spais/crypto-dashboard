@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-import ReactDOM from "react-dom";
-import requests from "./utilities/requests";
+import React, { useEffect, useState } from "react";
 import Ticker from "./components/Ticker/Ticker";
 
 const App = () => {
@@ -9,7 +7,7 @@ const App = () => {
       <div id="layout-wrapper">
         <header id="page-topbar">
           <div className="navbar-header">
-            <Ticker fetchURL={requests.fetchCurrenciesTicker} />
+            <Ticker />
           </div>
         </header>
       </div>
