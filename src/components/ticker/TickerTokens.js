@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../../utilities/axios";
 import requests from "../../utilities/requests";
 
-const TickerTokens = ({ fetchURL }) => {
+const TickerTokens = () => {
   const [tickerData, setTickerData] = useState(null);
 
   const roundDecimal = (num) => {
@@ -17,13 +17,13 @@ const TickerTokens = ({ fetchURL }) => {
     };
     requestData();
     return () => requestData;
-  }, [fetchURL]);
+  }, []);
 
   return (
     <div className="header-coins">
       {tickerData &&
         tickerData
-          .filter((token) => token.rank <= 5) // Display top 20 tokens
+          .filter((token) => token.rank <= 5) // Display number of tokens allowed
           .map((token, tokenIndex) => {
             return (
               <div className="header-coin" key={tokenIndex}>
