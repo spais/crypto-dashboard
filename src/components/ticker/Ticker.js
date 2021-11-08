@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import requests from "../../utilities/requests";
+import { useState, useEffect } from "react";
 import TickerTokens from "./TickerTokens";
 import "./ticker.styles.scss";
 
 const Ticker = () => {
-  useEffect(() => {
-    console.log("component did mount");
-  }, []);
   return (
-    <div className="ticker">
-      <TickerTokens fetchURL={requests.fetchCurrenciesTicker} />
-    </div>
+    <>
+      <div className="ticker">
+        <div className="ticker__element">{<TickerTokens />}</div>
+      </div>
+    </>
   );
 };
 
