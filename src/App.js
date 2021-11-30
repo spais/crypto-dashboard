@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Ticker from "./components/Ticker/Ticker";
+import TokenTicker from "./components/Ticker/TokenTicker";
 
-const App = () => {
+function App() {
   return (
     <div>
       <div id="layout-wrapper">
         <header id="page-topbar">
           <div className="navbar-header">
-            <Ticker />
+            <TokenTicker />
           </div>
         </header>
       </div>
     </div>
   );
-};
+}
 
 export default App;

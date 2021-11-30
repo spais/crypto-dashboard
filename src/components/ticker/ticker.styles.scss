@@ -7,7 +7,11 @@
   padding: 4px 0;
   box-sizing: content-box;
   overflow: hidden;
+  &__element {
+    width: inherit;
+  }
 }
+
 .header-coins {
   display: flex;
 }
