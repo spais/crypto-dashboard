@@ -5,7 +5,7 @@ export const TokenInfo = ({ tokenData }) => {
     price,
     currency,
     rank,
-    price_change = ["1d"].price_change,
+    ["1d"]: price_change,
   } = tokenData || {};
 
   const roundDecimal = (num) => {
@@ -36,7 +36,7 @@ export const TokenInfo = ({ tokenData }) => {
             </div>
             <div className="header-coin__content-text">
               <span className="header-coin__content-percentage up">
-                {roundDecimal(token.price_change)}%
+                {roundDecimal(token["1d"].price_change)}%
               </span>
               <span className="header-coin__content-percentage gray-text">
                 24HRs
